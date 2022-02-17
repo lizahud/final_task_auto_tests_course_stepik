@@ -16,9 +16,12 @@ class ProductPage(BasePage):
     def should_be_message_product_add_to_basket(self):
         message_product_add_to_basket = self.browser.find_element(*ProductPageLocators.MESSAGE_PRODUCT_ADD_TO_BASKET)
         name_book = self.browser.find_element(*ProductPageLocators.NAME_BOOK)
-        assert name_book.text in message_product_add_to_basket.text, "Incorrect product in basket"
+        assert name_book.text == message_product_add_to_basket.text, "Incorrect product in basket"
 
     def should_be_message_with_price_basket(self):
         message_with_price_basket = self.browser.find_element(*ProductPageLocators.MESSAGE_WITH_PRICE_BASKET)
         price_book = self.browser.find_element(*ProductPageLocators.PRICE_BOOK)
-        assert price_book.text in message_with_price_basket.text, "Incorrect price"
+        assert price_book.text == message_with_price_basket.text, "Incorrect price"
+
+    # def page_should_be_work(self):
+    #
